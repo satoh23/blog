@@ -64,7 +64,7 @@ const ArticleList = () => {
             Doloribus, non officiis possimus qui aperiam ullam. Debitis corporis
             blanditiis adipisci nihil ex!
           </Link>
-          <Link href="#" className="text-blue-800 hover:text-black">
+          <Link href="#" className="text-pink-800 hover:text-black">
             続きを読む
           </Link>
         </div>
