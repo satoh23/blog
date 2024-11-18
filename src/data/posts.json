@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": "next.js13",
+      "title": "Next.js13を学ぶ",
+      "content": "Nextjsを勉強中です",
+      "createdAt": "2022/11/17"
+    },
+    {
+      "id": "test1",
+      "title": "Test1",
+      "content": "これはTest1です。これはTest1です。これはTest1です。これはTest1です。これはTest1です。これはTest1です。これはTest1です。",
+      "createdAt": "2022/11/18"
+    },
+    {
+      "id": "test2",
+      "title": "Test2",
+      "content": "これはTest2です。これはTest2です。これはTest2です。これはTest2です。これはTest2です。これはTest2です。これはTest2です。これはTest2です。これはTest2です。これはTest2です。これはTest2です。",
+      "createdAt": "2022/11/19"
+    },
+    {
+      "id": "test3",
+      "title": "Test3",
+      "content": "これはTest3です。これはTest3です。これはTest3です。これはTest3です。これはTest3です。これはTest3です。これはTest3です。",
+      "createdAt": "2022/11/20"
+    },
+    {
+      "id": "test4",
+      "title": "Test4",
+      "content": "これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。これはTest4です。",
+      "createdAt": "2022/11/21"
+    }
+  ]
+}
