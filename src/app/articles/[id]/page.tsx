@@ -12,11 +12,12 @@ const Article = async ({ params }: { params: { id: string } }) => {
       <Image
         src="https://picsum.photos/1280"
         alt=""
-        width={1280}
-        height={300}
-        style={{ height: "300px" }} // TODO:heightの設定でautoが優先されてしまうためこうしている。それが解決したら削除する。
+        width={640}
+        height={320}
+        style={{ height: "320px" }} // TODO:heightの設定でautoが優先されてしまうためこうしている。それが解決したら削除する。
+        className="w-screen"
       />
-      <h1 className="text-4xl text-center mb-10 mt-10">
+      <h1 className="text-4xl text-center mb-10 mt-10 text-amber-950">
         {detailArticle.title}
       </h1>
       <div className="text-lg leading-relaxed text-justify">

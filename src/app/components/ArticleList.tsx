@@ -1,6 +1,4 @@
 import { Article } from "@/types";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import ArticleCard from "./ArticleCard";
 
@@ -10,7 +8,7 @@ type ArticleListProps = {
 
 const ArticleList = ({ articles }: ArticleListProps) => {
   return (
-    <div>
+    <div className="grid grid-cols-2 gap-4">
       {articles.map((article) => (
         <ArticleCard article={article} key={article.id} />
       ))}

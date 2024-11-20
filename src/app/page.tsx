@@ -11,27 +11,30 @@ export default async function Home() {
       </section>
 
       <aside className="w-full md:w-1/3 flex flex-col items-center px-3 md:pl-6">
-        <div className="bg-white shadow-md rounded p-4 mb-6 mt-4">
-          <h3 className="font-bold text-gray-900 mb-2">About Me</h3>
-          <p className="text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique.
+        <div className="rounded p-4 mt-4">
+          <h3 className="text-amber-950 font-bold mb-2 pb-2 border-b border-dashed border-amber-950">
+            プロフィール
+          </h3>
+          <p className="mt-2 pl-2">
+            1999年6月生まれ。2023年にIT系の専門学校を卒業してSESに就職。1年半で退職して現在二社目です。エンジニアとして成長するために日々奮闘中。
           </p>
         </div>
-        <div className="bg-white shadow-md rounded p-4 mb-6 mt-4 w-full">
-          <h3 className="font-bold text-gray-900 mb-2">Category</h3>
-          <ul className="text-gray-600 mt-2">
+        <div className="rounded p-4 mt-4 w-full">
+          <h3 className="text-amber-950 font-bold mb-2 pb-2 border-b border-dashed border-amber-950">
+            カテゴリー
+          </h3>
+          <ul className="mt-2 pl-2">
             <li>
-              <a href="#">Technology</a>
+              <a href="#">フロントエンド</a>
             </li>
             <li>
-              <a href="#">Automotive</a>
+              <a href="#">バックエンド</a>
             </li>
             <li>
-              <a href="#">Finance</a>
+              <a href="#">ネットワーク</a>
             </li>
             <li>
-              <a href="#">Sports</a>
+              <a href="#">DB</a>
             </li>
           </ul>
         </div>

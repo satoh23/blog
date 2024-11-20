@@ -9,40 +9,34 @@ type ArticleCardProps = {
 
 const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
-    <article className="shadow my-4 flex-col" key={article.id}>
-      <Link href={`articles/${article.id}`} className="hover:opacity-75">
+    <Link href={`articles/${article.id}`} className="hover:opacity-75">
+      <article
+        className="flex-grow p-4 rounded-xl overflow-hidden shadow-lg mb-3 h-1/4 bg-white"
+        style={{ height: "100%" }}
+        key={article.id}
+      >
         <Image
-          src="https://picsum.photos/1280"
+          src="https://picsum.photos/640"
           alt=""
-          width={1280}
-          height={300}
-          style={{ height: "300px" }} // TODO:heightの設定でautoが優先されてしまうためこうしている。それが解決したら削除する。
+          width={300}
+          height={150}
+          style={{ height: "150px" }} // TODO:heightの設定でautoが優先されてしまうためこうしている。それが解決したら削除する。
         />
-      </Link>
-      <div className="bg-white flex flex-col justify-start p-6">
-        <Link href="#" className="text-blue-700 pb-4 font-bold">
-          Technology
-        </Link>
-        <Link
-          href={`articles/${article.id}`}
-          className="text-slate-900 text-3xl font-bold pb-4 hover:text-gray-700"
-        >
-          {article.title}
-        </Link>
-        <p className="text-sm pb-3 text-slate-900">{article.createdAt}</p>
-        <Link href={`articles/${article.id}`} className="text-slate-900 pb-6">
-          {article.content.length > 70
-            ? article.content.substring(0.7) + "..."
-            : article.content}
-        </Link>
-        <Link
-          href={`articles/${article.id}`}
-          className="text-pink-800 hover:text-black"
-        >
-          続きを読む
-        </Link>
-      </div>
-    </article>
+        <div className="px-6 py-4">
+          <p className="text-gray-700 text-base">
+            {article.title.length > 20
+              ? article.title.substring(0, 20) + "..."
+              : article.title}
+          </p>
+          <p className="text-sm text-gray-600">{article.createdAt}</p>
+        </div>
+        <div className="px-6 pt-4 pb-2">
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+            テスト
+          </span>
+        </div>
+      </article>
+    </Link>
   );
 };
 

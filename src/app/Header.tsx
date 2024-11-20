@@ -1,12 +1,16 @@
 import Link from "next/link";
 import React from "react";
 
+import { hachiMaruPop } from "@/utils/fonts";
+
 const Header = () => {
   return (
-    <header className="py-5 px-10 border-b flex justify-between items-center">
+    <header className="py-5 px-10 flex justify-between items-center">
       <div>
-        <h1 className="text-2xl font-extrabold">
-          <Link href="/">ひよこエンジニアの成長日記</Link>
+        <h1 className="text-amber-950 text-2xl font-extrabold">
+          <Link href="/" className={`${hachiMaruPop.className}`}>
+            ひよこエンジニアの成長日記🐣
+          </Link>
         </h1>
       </div>
       <div>
