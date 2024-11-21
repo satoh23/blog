@@ -9,32 +9,38 @@ type ArticleCardProps = {
 
 const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
-    <Link href={`articles/${article.id}`} className="hover:opacity-75">
+    <Link
+      href={`articles/${article.id}`}
+      className="duration-1000 ease-out shadow-md hover:shadow-lg hover:-translate-y-1 hover:transition-all"
+    >
       <article
-        className="flex-grow p-4 rounded-xl overflow-hidden shadow-lg mb-3 h-1/4 bg-white"
+        className="p-2 rounded-lg overflow-hidden h-1/4 bg-white flex flex-col"
         style={{ height: "100%" }}
         key={article.id}
       >
-        <Image
-          src="https://picsum.photos/640"
-          alt=""
-          width={300}
-          height={150}
-          style={{ height: "150px" }} // TODO:heightの設定でautoが優先されてしまうためこうしている。それが解決したら削除する。
-        />
-        <div className="px-6 py-4">
-          <p className="text-gray-700 text-base">
-            {article.title.length > 20
-              ? article.title.substring(0, 20) + "..."
-              : article.title}
-          </p>
-          <p className="text-sm text-gray-600">{article.createdAt}</p>
+        <div className="flex-grow">
+          <Image
+            src="https://picsum.photos/640"
+            alt=""
+            width={100}
+            height={100}
+            layout="responsive"
+          />
+          <div className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-2 mt-4">
+            Next.js
+          </div>
+          <div className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-2 mt-4">
+            フロントエンド
+          </div>
+          <div>
+            <p className="text-slate-800 text-base mt-0.5 mx-1 line-clamp-3 lg:line-clamp-2">
+              {article.title}
+            </p>
+          </div>
         </div>
-        <div className="px-6 pt-4 pb-2">
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            テスト
-          </span>
-        </div>
+        <h1 className="text-xs text-gray-400 text-right mt-2">
+          {article.createdAt}
+        </h1>
       </article>
     </Link>
   );

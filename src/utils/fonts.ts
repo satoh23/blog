@@ -1,5 +1,4 @@
-import { Hachi_Maru_Pop } from "next/font/google";
-import { Zen_Maru_Gothic } from "next/font/google";
+import { Hachi_Maru_Pop, Zen_Maru_Gothic, Yusei_Magic } from "next/font/google";
 
 export const hachiMaruPop = Hachi_Maru_Pop({
   weight: "400",
@@ -7,6 +6,11 @@ export const hachiMaruPop = Hachi_Maru_Pop({
 });
 
 export const zenMaruGothic = Zen_Maru_Gothic({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+export const yuseiMagic = Yusei_Magic({
   weight: "400",
   subsets: ["latin"],
 });

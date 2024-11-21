@@ -33,7 +33,7 @@ export const createArticle = async (
   title: string,
   content: string
 ): Promise<Article> => {
-  const currentDatetime = new Date().toISOString();
+  const currentDatetime = new Date().toLocaleDateString("ja-JP");
   const res = await fetch(`http://localhost:3001/posts`, {
     method: "POST",
     headers: {

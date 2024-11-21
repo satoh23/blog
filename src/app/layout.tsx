@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`container mx-auto bg-yellow-50 text-amber-900 ${zenMaruGothic.className}`}
+        className={`container mx-auto bg-amber-100 text-amber-900 ${zenMaruGothic.className}`}
       >
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow lg:pl-28 lg:pr-28 pt-7 pb-7">
+          <main className="flex-grow lg:px-14 py-7">
             <Suspense fallback={<Loading />}>{children}</Suspense>
           </main>
           <Footer />
