@@ -33,14 +33,14 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             フロントエンド
           </div>
           <div>
-            <p className="text-slate-800 text-base mt-0.5 mx-1 line-clamp-3 lg:line-clamp-2">
+            <h1 className="text-slate-800 text-base mt-0.5 mx-1 line-clamp-3 lg:line-clamp-2">
               {article.title}
-            </p>
+            </h1>
           </div>
         </div>
-        <h1 className="text-xs text-gray-400 text-right mt-2">
+        <p className="text-xs text-gray-400 text-right mt-2">
           {article.createdAt}
-        </h1>
+        </p>
       </article>
     </Link>
   );

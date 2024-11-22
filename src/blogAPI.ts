@@ -1,4 +1,4 @@
-import { Article } from "./types";
+import { Article, Category } from "./types";
 import { notFound } from "next/navigation";
 
 export const getAllArticles = async (): Promise<Article[]> => {
@@ -10,6 +10,34 @@ export const getAllArticles = async (): Promise<Article[]> => {
 
   const articles = await res.json();
   return articles;
+};
+
+export const getAllCategories = async (): Promise<Category[]> => {
+  const res = await fetch("http://localhost:3001/categories", {
+    cache: "no-store",
+  });
+
+  if (res.ok == false) {
+    throw new Error("エラーが発生しました。");
+  }
+
+  const categories = await res.json();
+  return categories;
+};
+
+export const getArticleCategory = async (
+  article_id: string
+): Promise<Category[]> => {
+  const res = await fetch(`http://localhost:3001/categories?q=1`, {
+    cache: "no-store",
+  });
+
+  if (res.ok == false) {
+    throw new Error("エラーが発生しました。");
+  }
+
+  const categories = await res.json();
+  return categories;
 };
 
 export const getDetailArticle = async (id: string): Promise<Article> => {

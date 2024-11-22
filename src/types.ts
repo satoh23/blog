@@ -4,3 +4,9 @@ export type Article = {
   content: string;
   createdAt: string;
 };
+
+export type Category = {
+  id: string;
+  name: string;
+  icon: string;
+};

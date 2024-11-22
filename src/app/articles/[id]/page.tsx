@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
 
-import DeleteButton from "@/app/components/DeleteButton";
-import { getDetailArticle } from "@/blogAPI";
+import { getArticleCategory, getDetailArticle } from "@/blogAPI";
 import { yuseiMagic } from "@/utils/fonts";
 
 const Article = async ({ params }: { params: { id: string } }) => {
   params = await params;
   const detailArticle = await getDetailArticle(params.id);
+  const categories = await getArticleCategory(params.id);
 
   return (
     <div className="lg:flex">
@@ -17,6 +17,21 @@ const Article = async ({ params }: { params: { id: string } }) => {
         >
           {detailArticle.title}
         </h1>
+        {categories.map((category) => (
+          <h1 className="inline-block bg-slate-100 rounded-full px-3 py-1 text-sm font-semibold text-slate-400 mr-2 mt-4">
+            <Image
+              src={category.icon}
+              alt=""
+              width={13}
+              height={13}
+              className="inline-block mr-2 pb-1"
+            />
+            {category.name}
+          </h1>
+        ))}
+        <p className="text-base text-gray-400 text-right mt-5">
+          最終更新：{detailArticle.createdAt}
+        </p>
         <Image
           src="https://picsum.photos/1280"
           alt=""
@@ -24,29 +39,28 @@ const Article = async ({ params }: { params: { id: string } }) => {
           height={100}
           className="mx-auto my-6 lg:my-12"
         />
-        <div className="text-base leading-relaxed text-left text-gray-950 font-bold">
+        <div className="text-base leading-relaxed mx-auto pt-5 text-gray-950">
           <p dangerouslySetInnerHTML={{ __html: detailArticle.content }} />
         </div>
-        <div className="text-right mt-3">
-          <DeleteButton id={detailArticle.id} />
-        </div>
       </div>
-      <aside className="w-full md:w-1/4 lg:flex flex-col items-center px-3 md:pl-6 hidden">
-        <div className="rounded p-4 mt-4 w-full">
-          <h3 className="text-amber-950 font-bold mb-2 pb-2 border-b border-dashed border-amber-950">
+      <aside className="w-full md:w-1/4 lg:flex flex-col items-center hidden">
+        <div className="mt-10 fixed w-1/4 pl-16">
+          <h3 className="text-amber-950 font-bold mb-2 pb-2 border-b border-dashed border-amber-950 px-1">
             目次
           </h3>
-          <ul className="mt-2 pl-2">
-            <li>
-              <a href="#">フロントエンド</a>
+          <ul className="mt-2 pl-3 text-sm">
+            <li className="my-0.5 line-clamp-1">
+              <a href="#">
+                フロントエンドああああああああああああああああああああああああああ
+              </a>
             </li>
-            <li>
+            <li className="my-0.5 line-clamp-1">
               <a href="#">バックエンド</a>
             </li>
-            <li>
+            <li className="my-0.5 line-clamp-1">
               <a href="#">ネットワーク</a>
             </li>
-            <li>
+            <li className="my-0.5 line-clamp-1">
               <a href="#">DB</a>
             </li>
           </ul>
