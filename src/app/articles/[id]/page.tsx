@@ -3,6 +3,7 @@ import React from "react";
 
 import { getArticleCategory, getDetailArticle } from "@/blogAPI";
 import { yuseiMagic } from "@/utils/fonts";
+import Link from "next/link";
 
 const Article = async ({ params }: { params: { id: string } }) => {
   params = await params;
@@ -18,7 +19,11 @@ const Article = async ({ params }: { params: { id: string } }) => {
           {detailArticle.title}
         </h1>
         {categories.map((category) => (
-          <h1 className="inline-block bg-slate-100 rounded-full px-3 py-1 text-sm font-semibold text-slate-400 mr-2 mt-4">
+          <Link
+            href="#"
+            className="inline-block transition-all bg-slate-100 hover:bg-slate-200 text-slate-400 hover:text-slate-500 rounded-full px-3 py-1 text-sm font-semibold mr-2 mt-4"
+            key={category.id}
+          >
             <Image
               src={category.icon}
               alt=""
@@ -27,7 +32,7 @@ const Article = async ({ params }: { params: { id: string } }) => {
               className="inline-block mr-2 pb-1"
             />
             {category.name}
-          </h1>
+          </Link>
         ))}
         <p className="text-base text-gray-400 text-right mt-5">
           最終更新：{detailArticle.createdAt}
@@ -49,19 +54,19 @@ const Article = async ({ params }: { params: { id: string } }) => {
             目次
           </h3>
           <ul className="mt-2 pl-3 text-sm">
-            <li className="my-0.5 line-clamp-1">
-              <a href="#">
+            <li className="my-0.5 line-clamp-1 hover:bg-amber-200 hover:text-amber-950">
+              <Link href="#">
                 フロントエンドああああああああああああああああああああああああああ
-              </a>
+              </Link>
             </li>
-            <li className="my-0.5 line-clamp-1">
-              <a href="#">バックエンド</a>
+            <li className="my-0.5 line-clamp-1 hover:bg-amber-200 hover:text-amber-950">
+              <Link href="#">バックエンド</Link>
             </li>
-            <li className="my-0.5 line-clamp-1">
-              <a href="#">ネットワーク</a>
+            <li className="my-0.5 line-clamp-1 hover:bg-amber-200 hover:text-amber-950">
+              <Link href="#">ネットワーク</Link>
             </li>
-            <li className="my-0.5 line-clamp-1">
-              <a href="#">DB</a>
+            <li className="my-0.5 line-clamp-1 hover:bg-amber-200 hover:text-amber-950">
+              <Link href="#">DB</Link>
             </li>
           </ul>
         </div>
