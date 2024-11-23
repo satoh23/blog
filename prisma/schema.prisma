@@ -12,3 +12,19 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Article {
+  id                String     @id @default(uuid())
+  thumbnail_url     String?
+  title             String     @unique @db.VarChar(40)
+  content           String
+  belong_categories Category[]
+  last_updated_at   DateTime   @db.Date
+}
+
+model Category {
+  id       String    @id @default(uuid())
+  name     String    @unique
+  icon     String    @unique
+  articles Article[]
+}
