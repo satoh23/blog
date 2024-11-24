@@ -28,7 +28,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           />
           {article.belong_categories.map((category) => (
             <div
-              className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-2 mt-1"
+              className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-1 mt-1"
               key={category.id}
             >
               {category.name}
