@@ -25,9 +25,7 @@ export const getAllCategories = async (): Promise<Category[]> => {
   return categories;
 };
 
-export const getArticleCategory = async (
-  article_id: string
-): Promise<Category[]> => {
+export const getArticleCategory = async (): Promise<Category[]> => {
   const res = await fetch(`http://localhost:3001/categories?q=1`, {
     cache: "no-store",
   });
