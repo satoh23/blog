@@ -20,8 +20,8 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
       >
         <div className="flex-grow">
           <Image
-            src="https://picsum.photos/360"
-            alt=""
+            src={article.thumbnail_url}
+            alt={article.title}
             width={360}
             height={360}
             className="mb-2"

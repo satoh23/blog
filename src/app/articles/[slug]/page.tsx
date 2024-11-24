@@ -46,8 +46,8 @@ const Article = async (props: { params: Promise<{ slug: string }> }) => {
           最終更新：{detailArticle.updated_at}
         </p>
         <Image
-          src="https://picsum.photos/1280"
-          alt=""
+          src={detailArticle.thumbnail_url}
+          alt={detailArticle.title}
           width={320}
           height={100}
           className="mx-auto my-6 lg:my-12"
