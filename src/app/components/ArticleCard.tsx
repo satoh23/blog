@@ -24,10 +24,11 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             alt=""
             width={360}
             height={360}
+            className="mb-2"
           />
           {article.belong_categories.map((category) => (
             <div
-              className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-2 mt-3"
+              className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-2 mt-1"
               key={category.id}
             >
               {category.name}
