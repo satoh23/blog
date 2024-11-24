@@ -14,7 +14,7 @@ async function fetchAllCategories() {
     next: { revalidate: 60 * 60 },
   });
   const data = await res.json();
-  return data.articles;
+  return data.categories;
 }
 
 export default async function Home() {
