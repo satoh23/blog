@@ -3,14 +3,15 @@ import Image from "next/image";
 
 const Loading = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen pb-60">
       <Image
         src="/piyopiyo.gif"
         alt="歩くひよこのGIF"
-        width={100}
-        height={100}
+        width={150}
+        height={150}
+        className="mx-auto"
       />
-      <div>読み込み中...</div>
+      <div className="text-3xl mt-5">読み込み中...</div>
     </div>
   );
 };
