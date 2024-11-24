@@ -22,9 +22,8 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           <Image
             src="https://picsum.photos/640"
             alt=""
-            width={100}
-            height={100}
-            layout="responsive"
+            width={600}
+            height={600}
           />
           {article.belong_categories.map((category) => (
             <div
