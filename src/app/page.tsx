@@ -1,10 +1,18 @@
-import { getAllArticles, getAllCategories } from "@/blogAPI";
+import { getAllCategories } from "@/blogAPI";
 import ArticleList from "./components/ArticleList";
 import SideBar from "./components/SideBar";
 
+async function fetchAllArticles() {
+  const res = await fetch(`http://localhost:3000/api/articles`, {
+    cache: "no-store",
+  });
+  const data = await res.json();
+  return data.articles;
+}
+
 export default async function Home() {
-  const articles = await getAllArticles();
   const categories = await getAllCategories();
+  const articles = await fetchAllArticles();
 
   return (
     <div className="md:flex">

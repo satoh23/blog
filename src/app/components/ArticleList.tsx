@@ -1,8 +1,7 @@
-import { Article, Category } from "@/types";
+import { Article } from "@/types";
 import React from "react";
 
 import ArticleCard from "./ArticleCard";
-import { getArticleCategory } from "@/blogAPI";
 
 type ArticleListProps = {
   articles: Article[];

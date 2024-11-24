@@ -1,9 +1,16 @@
 import React from "react";
+import Image from "next/image";
 
 const Loading = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="w-16 h-16 border-t-4 border-orange-500 rounded-full animate-spin"></div>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <Image
+        src="/piyopiyo.gif"
+        alt="歩くひよこのGIF"
+        width={100}
+        height={100}
+      />
+      <div>読み込み中...</div>
     </div>
   );
 };

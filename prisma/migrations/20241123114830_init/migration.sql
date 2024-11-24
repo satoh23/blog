@@ -4,7 +4,7 @@ CREATE TABLE "Article" (
     "thumbnail_url" TEXT,
     "title" VARCHAR(40) NOT NULL,
     "content" TEXT NOT NULL,
-    "last_updated_at" DATE NOT NULL,
+    "updated_at" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Article_pkey" PRIMARY KEY ("id")
 );

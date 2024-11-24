@@ -1,8 +1,10 @@
 export type Article = {
   id: string;
+  thumbnail_url: string;
   title: string;
   content: string;
-  createdAt: string;
+  belong_categories: Category[];
+  updated_at: string;
 };
 
 export type Category = {

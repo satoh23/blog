@@ -1,14 +1,22 @@
 import Image from "next/image";
 import React from "react";
 
-import { getArticleCategory, getDetailArticle } from "@/blogAPI";
 import { yuseiMagic } from "@/utils/fonts";
 import Link from "next/link";
+import { Category } from "@/types";
 
-const Article = async ({ params }: { params: { id: string } }) => {
+async function fetchDetailArticle(slug: string) {
+  const res = await fetch(`http://localhost:3000/api/articles/${slug}`, {
+    next: { revalidate: 3600 },
+  });
+  const data = await res.json();
+  return data.article;
+}
+
+const Article = async ({ params }: { params: { slug: string } }) => {
   params = await params;
-  const detailArticle = await getDetailArticle(params.id);
-  const categories = await getArticleCategory(params.id);
+  const detailArticle = await fetchDetailArticle(params.slug);
+  const categories: Category[] = detailArticle.belong_categories;
 
   return (
     <div className="lg:flex">
@@ -25,7 +33,8 @@ const Article = async ({ params }: { params: { id: string } }) => {
             key={category.id}
           >
             <Image
-              src={category.icon}
+              src="https://picsum.photos/1280"
+              //   src={category.icon}
               alt=""
               width={13}
               height={13}
@@ -35,7 +44,7 @@ const Article = async ({ params }: { params: { id: string } }) => {
           </Link>
         ))}
         <p className="text-base text-gray-400 text-right mt-5">
-          最終更新：{detailArticle.createdAt}
+          最終更新：{detailArticle.updated_at}
         </p>
         <Image
           src="https://picsum.photos/1280"

@@ -26,12 +26,14 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             height={100}
             layout="responsive"
           />
-          <div className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-2 mt-4">
-            Next.js
-          </div>
-          <div className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-2 mt-4">
-            フロントエンド
-          </div>
+          {article.belong_categories.map((category) => (
+            <div
+              className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-2 mt-3"
+              key={category.id}
+            >
+              {category.name}
+            </div>
+          ))}
           <div>
             <h1 className="text-slate-800 text-base mt-0.5 mx-1 line-clamp-3 lg:line-clamp-2">
               {article.title}
@@ -39,7 +41,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           </div>
         </div>
         <p className="text-xs text-gray-400 text-right mt-2">
-          {article.createdAt}
+          {article.updated_at}
         </p>
       </article>
     </Link>
