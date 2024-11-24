@@ -29,6 +29,7 @@ const CategoryArea = ({ categories }: CategoryProps) => {
                 className="inline-block mr-1 pb-1"
               />
               {category.name}
+              {category.icon}
             </Link>
           </li>
         ))}
