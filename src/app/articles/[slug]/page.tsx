@@ -33,9 +33,8 @@ const Article = async (props: { params: Promise<{ slug: string }> }) => {
             key={category.id}
           >
             <Image
-              src="https://picsum.photos/1280"
-              //   src={category.icon}
-              alt=""
+              src={category.icon}
+              alt={category.name}
               width={13}
               height={13}
               className="inline-block mr-2 pb-1"

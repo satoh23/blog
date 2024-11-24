@@ -22,9 +22,8 @@ const CategoryArea = ({ categories }: CategoryProps) => {
           >
             <Link href="#">
               <Image
-                src="/next.svg"
-                // src={category.icon}
-                alt=""
+                src={category.icon}
+                alt={category.name}
                 width={13}
                 height={13}
                 className="inline-block mr-1 pb-1"
