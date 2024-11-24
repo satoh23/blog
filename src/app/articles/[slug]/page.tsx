@@ -22,14 +22,14 @@ const Article = async (props: { params: Promise<{ slug: string }> }) => {
     <div className="lg:flex">
       <div className="max-w-6xl lg:mx-auto bg-white rounded-xl px-6 py-8 lg:px-14 lg:py-12 lg:w-3/4">
         <h1
-          className={`text-2xl lg:text-3xl text-left text-gray-800 font-extrabold ${yuseiMagic.className}`}
+          className={`text-2xl lg:text-3xl text-left text-gray-800 font-extrabold ${yuseiMagic.className} mb-2`}
         >
           {detailArticle.title}
         </h1>
         {categories.map((category) => (
           <Link
             href="#"
-            className="inline-block transition-all bg-slate-100 hover:bg-slate-200 text-slate-400 hover:text-slate-500 rounded-full px-3 py-1 text-sm font-semibold mr-2 mt-4"
+            className="inline-block transition-all bg-slate-100 hover:bg-slate-200 text-slate-400 hover:text-slate-500 rounded-full px-3 py-1 text-sm font-semibold mr-2 mt-2"
             key={category.id}
           >
             <Image
@@ -42,7 +42,7 @@ const Article = async (props: { params: Promise<{ slug: string }> }) => {
             {category.name}
           </Link>
         ))}
-        <p className="text-base text-gray-400 text-right mt-5">
+        <p className="text-base text-gray-400 text-right mt-4">
           最終更新：{detailArticle.updated_at}
         </p>
         <Image

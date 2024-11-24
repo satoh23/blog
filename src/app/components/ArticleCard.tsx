@@ -24,7 +24,6 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             alt={article.title}
             width={360}
             height={360}
-            className="mb-2"
           />
           {article.belong_categories.map((category) => (
             <div
