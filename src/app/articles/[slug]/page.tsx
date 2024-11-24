@@ -7,7 +7,7 @@ import { Category } from "@/types";
 
 async function fetchDetailArticle(slug: string) {
   const res = await fetch(process.env.ORIGIN + `/api/articles/${slug}`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 60 * 60 },
   });
   const data = await res.json();
   return data.article;
