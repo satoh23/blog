@@ -13,9 +13,9 @@ async function fetchDetailArticle(slug: string) {
   return data.article;
 }
 
-const Article = async ({ params }: { params: { slug: string } }) => {
-  params = await params;
-  const detailArticle = await fetchDetailArticle(params.slug);
+const Article = async (props: { params: { slug: string } }) => {
+  const slug = (await props.params).slug;
+  const detailArticle = await fetchDetailArticle(slug);
   const categories: Category[] = detailArticle.belong_categories;
 
   return (
