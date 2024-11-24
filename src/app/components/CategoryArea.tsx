@@ -16,11 +16,8 @@ const CategoryArea = ({ categories }: CategoryProps) => {
       </h3>
       <ul className="mt-3 pl-2">
         {categories.map((category) => (
-          <li
-            key={category.id}
-            className="hover:bg-amber-200 hover:text-amber-950"
-          >
-            <Link href="#">
+          <Link href="#" key={category.id}>
+            <li className="hover:bg-amber-200 hover:text-amber-950">
               <Image
                 src={category.icon}
                 alt={category.name}
@@ -29,8 +26,8 @@ const CategoryArea = ({ categories }: CategoryProps) => {
                 className="inline-block mr-1 pb-1"
               />
               {category.name}
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
     </div>
