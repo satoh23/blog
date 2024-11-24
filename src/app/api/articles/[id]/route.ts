@@ -16,11 +16,11 @@ async function connect() {
 // 記事一覧取得
 export const GET = async (
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  props: { params: Promise<{ id: string }> }
 ) => {
   try {
     await connect();
-    const id = (await params).id;
+    const id = (await props.params).id;
     const article = await prisma.article.findFirst({
       where: {
         id: id,
