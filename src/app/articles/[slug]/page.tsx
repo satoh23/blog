@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Category } from "@/types";
 
 async function fetchDetailArticle(slug: string) {
-  const res = await fetch(`http://localhost:3000/api/articles/${slug}`, {
+  const res = await fetch(process.env.ORIGIN + `/api/articles/${slug}`, {
     next: { revalidate: 3600 },
   });
   const data = await res.json();

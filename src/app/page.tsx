@@ -3,7 +3,7 @@ import ArticleList from "./components/ArticleList";
 import SideBar from "./components/SideBar";
 
 async function fetchAllArticles() {
-  const res = await fetch(`http://localhost:3000/api/articles`, {
+  const res = await fetch(process.env.ORIGIN + `/api/articles`, {
     cache: "no-store",
   });
   const data = await res.json();
