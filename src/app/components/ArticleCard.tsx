@@ -20,10 +20,10 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
       >
         <div className="flex-grow">
           <Image
-            src="https://picsum.photos/640"
+            src="https://picsum.photos/360"
             alt=""
-            width={600}
-            height={600}
+            width={360}
+            height={360}
           />
           {article.belong_categories.map((category) => (
             <div
