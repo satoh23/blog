@@ -17,6 +17,9 @@ const Article = async (props: { params: Promise<{ slug: string }> }) => {
   const slug = (await props.params).slug;
   const detailArticle = await fetchDetailArticle(slug);
   const categories: Category[] = detailArticle.belong_categories;
+  const updatedDate = new Date(detailArticle.updated_at).toLocaleDateString(
+    "ja-JP"
+  );
 
   return (
     <div className="lg:flex">
@@ -43,7 +46,7 @@ const Article = async (props: { params: Promise<{ slug: string }> }) => {
           </Link>
         ))}
         <p className="text-base text-gray-400 text-right mt-4">
-          最終更新：{detailArticle.updated_at}
+          最終更新：{updatedDate}
         </p>
         <Image
           src={detailArticle.thumbnail_url}

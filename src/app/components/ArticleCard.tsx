@@ -8,6 +8,7 @@ type ArticleCardProps = {
 };
 
 const ArticleCard = ({ article }: ArticleCardProps) => {
+  const updatedDate = new Date(article.updated_at).toLocaleDateString("ja-JP");
   return (
     <Link
       href={`articles/${article.id}`}
@@ -46,9 +47,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             </h1>
           </div>
         </div>
-        <p className="text-xs text-gray-400 text-right mt-2">
-          {article.updated_at}
-        </p>
+        <p className="text-xs text-gray-400 text-right mt-2">{updatedDate}</p>
       </article>
     </Link>
   );
