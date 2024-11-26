@@ -16,7 +16,7 @@ const CategoryArea = ({ categories }: CategoryProps) => {
       </h3>
       <ul className="mt-3 pl-2">
         {categories.map((category) => (
-          <Link href="#" key={category.id}>
+          <Link href={`/categories/${category.id}`} key={category.id}>
             <li className="hover:bg-amber-200 hover:text-amber-950">
               <Image
                 src={category.icon}

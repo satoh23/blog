@@ -11,7 +11,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
   const updatedDate = new Date(article.updated_at).toLocaleDateString("ja-JP");
   return (
     <Link
-      href={`articles/${article.id}`}
+      href={`/articles/${article.id}`}
       className="duration-1000 ease-out shadow-md hover:shadow-lg hover:-translate-y-1 hover:transition-all"
     >
       <article
