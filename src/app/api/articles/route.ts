@@ -1,3 +1,4 @@
+import { getQueryParamOrUndefined } from "@/utils/queryParams";
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 
@@ -14,10 +15,21 @@ async function connect() {
 }
 
 // 記事一覧取得
-export const GET = async () => {
+export const GET = async (request: Request) => {
+  const categoryId = getQueryParamOrUndefined(request.url, "?categoryId=");
   try {
     await connect();
     const articles = await prisma.article.findMany({
+      where:
+        categoryId == undefined
+          ? {}
+          : {
+              belong_categories: {
+                some: {
+                  id: categoryId,
+                },
+              },
+            },
       include: {
         belong_categories: true,
       },
