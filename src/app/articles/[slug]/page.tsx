@@ -31,7 +31,7 @@ const Article = async (props: { params: Promise<{ slug: string }> }) => {
         </h1>
         {categories.map((category) => (
           <Link
-            href="#"
+            href={`/categories/${category.id}`}
             className="inline-block transition-all bg-slate-100 hover:bg-slate-200 text-slate-400 hover:text-slate-500 rounded-full px-3 py-1 text-sm font-semibold mr-2 mt-2"
             key={category.id}
           >
