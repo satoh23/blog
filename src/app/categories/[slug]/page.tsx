@@ -21,7 +21,9 @@ async function fetchAllCategories() {
   return data.categories;
 }
 
-const CategoryTmp = async (props: { params: Promise<{ slug: string }> }) => {
+const CategoryArticles = async (props: {
+  params: Promise<{ slug: string }>;
+}) => {
   const slug = (await props.params).slug;
   const articles = await fetchAllArticles(slug);
   const categories: Category[] = await fetchAllCategories();
@@ -41,4 +43,4 @@ const CategoryTmp = async (props: { params: Promise<{ slug: string }> }) => {
   );
 };
 
-export default CategoryTmp;
+export default CategoryArticles;
