@@ -1,3 +1,4 @@
+import { Article, Category } from "@/types";
 import ArticleList from "./components/ArticleList";
 import SideBar from "./components/SideBar";
 
@@ -18,8 +19,8 @@ async function fetchAllCategories() {
 }
 
 export default async function Home() {
-  const articles = await fetchAllArticles();
-  const categories = await fetchAllCategories();
+  const articles: Article[] = await fetchAllArticles();
+  const categories: Category[] = await fetchAllCategories();
 
   return (
     <div className="md:flex">

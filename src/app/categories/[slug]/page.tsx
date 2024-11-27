@@ -1,6 +1,6 @@
 import ArticleList from "@/app/components/ArticleList";
 import SideBar from "@/app/components/SideBar";
-import { Category } from "@/types";
+import { Article, Category } from "@/types";
 
 async function fetchAllArticles(id: string) {
   const res = await fetch(
@@ -24,11 +24,12 @@ async function fetchAllCategories() {
 const CategoryArticles = async (props: {
   params: Promise<{ slug: string }>;
 }) => {
-  const slug = (await props.params).slug;
-  const articles = await fetchAllArticles(slug);
+  const slug: string = (await props.params).slug;
+  const articles: Article[] = await fetchAllArticles(slug);
   const categories: Category[] = await fetchAllCategories();
-  const categoryName = categories.filter((category) => category.id == slug)[0]
-    .name;
+  const categoryName: string = categories.filter(
+    (category) => category.id == slug
+  )[0].name;
 
   return (
     <div className="md:flex">

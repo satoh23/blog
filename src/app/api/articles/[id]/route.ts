@@ -20,7 +20,7 @@ export const GET = async (
 ) => {
   try {
     await connect();
-    const id = (await params).id;
+    const id: string = (await params).id;
     const article = await prisma.article.findFirst({
       where: {
         id: id,

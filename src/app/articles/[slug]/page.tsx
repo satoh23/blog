@@ -3,7 +3,7 @@ import React from "react";
 
 import { yuseiMagic } from "@/utils/fonts";
 import Link from "next/link";
-import { Category } from "@/types";
+import { Article, Category } from "@/types";
 
 async function fetchDetailArticle(slug: string) {
   const res = await fetch(process.env.ORIGIN + `/api/articles/${slug}`, {
@@ -13,13 +13,13 @@ async function fetchDetailArticle(slug: string) {
   return data.article;
 }
 
-const Article = async (props: { params: Promise<{ slug: string }> }) => {
-  const slug = (await props.params).slug;
-  const detailArticle = await fetchDetailArticle(slug);
-  const categories: Category[] = detailArticle.belong_categories;
-  const updatedDate = new Date(detailArticle.updated_at).toLocaleDateString(
-    "ja-JP"
-  );
+const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
+  const slug: string = (await props.params).slug;
+  const detailArticle: Article = await fetchDetailArticle(slug);
+  const belongCategories: Category[] = detailArticle.belong_categories;
+  const updatedDate: string = new Date(
+    detailArticle.updated_at
+  ).toLocaleDateString("ja-JP");
 
   return (
     <div className="lg:flex">
@@ -29,7 +29,7 @@ const Article = async (props: { params: Promise<{ slug: string }> }) => {
         >
           {detailArticle.title}
         </h1>
-        {categories.map((category) => (
+        {belongCategories.map((category) => (
           <Link
             href={`/categories/${category.id}`}
             className="inline-block transition-all bg-slate-100 hover:bg-slate-200 text-slate-400 hover:text-slate-500 rounded-full px-3 py-1 text-sm font-semibold mr-2 mt-2"
@@ -86,4 +86,4 @@ const Article = async (props: { params: Promise<{ slug: string }> }) => {
   );
 };
 
-export default Article;
+export default DetailArticle;
