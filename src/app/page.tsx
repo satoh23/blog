@@ -1,22 +1,8 @@
 import { Article, Category } from "@/types";
 import ArticleList from "./components/ArticleList";
 import SideBar from "./components/SideBar";
-
-async function fetchAllArticles() {
-  const res = await fetch(process.env.ORIGIN + `/api/articles`, {
-    cache: "no-store",
-  });
-  const data = await res.json();
-  return data.articles;
-}
-
-async function fetchAllCategories() {
-  const res = await fetch(process.env.ORIGIN + `/api/categories`, {
-    next: { revalidate: 60 * 60 * 24 },
-  });
-  const data = await res.json();
-  return data.categories;
-}
+import { fetchAllArticles } from "@/utils/articles";
+import { fetchAllCategories } from "@/utils/categories";
 
 export default async function Home() {
   const articles: Article[] = await fetchAllArticles();

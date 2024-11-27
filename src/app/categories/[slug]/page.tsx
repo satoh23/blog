@@ -1,25 +1,8 @@
 import ArticleList from "@/app/components/ArticleList";
 import SideBar from "@/app/components/SideBar";
 import { Article, Category } from "@/types";
-
-async function fetchAllArticles(id: string) {
-  const res = await fetch(
-    process.env.ORIGIN + `/api/articles?categoryId=${id}`,
-    {
-      cache: "no-store",
-    }
-  );
-  const data = await res.json();
-  return data.articles;
-}
-
-async function fetchAllCategories() {
-  const res = await fetch(process.env.ORIGIN + `/api/categories`, {
-    next: { revalidate: 60 * 60 * 24 },
-  });
-  const data = await res.json();
-  return data.categories;
-}
+import { fetchAllArticles } from "@/utils/articles";
+import { fetchAllCategories } from "@/utils/categories";
 
 const CategoryArticles = async (props: {
   params: Promise<{ slug: string }>;

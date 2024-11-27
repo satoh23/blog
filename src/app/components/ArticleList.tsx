@@ -1,5 +1,4 @@
 import { Article } from "@/types";
-import React from "react";
 
 import ArticleCard from "./ArticleCard";
 

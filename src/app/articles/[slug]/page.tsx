@@ -1,17 +1,9 @@
 import Image from "next/image";
-import React from "react";
 
 import { yuseiMagic } from "@/utils/fonts";
 import Link from "next/link";
 import { Article, Category } from "@/types";
-
-async function fetchDetailArticle(slug: string) {
-  const res = await fetch(process.env.ORIGIN + `/api/articles/${slug}`, {
-    next: { revalidate: 60 * 60 },
-  });
-  const data = await res.json();
-  return data.article;
-}
+import { fetchDetailArticle } from "@/utils/articles";
 
 const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
   const slug: string = (await props.params).slug;
