@@ -1,15 +1,16 @@
-"use client";
+import Image from "next/image";
 
 const Error = ({ reset }: { reset: () => void }) => {
   return (
-    <div className="bg-red-100 border-1-4 border-red-500 text-red-700 mt-4 rounded shadow-md p-2 mx-auto">
-      <h3 className="font-bold mb-2">エラーが発生しました</h3>
-      <button
-        onClick={() => reset()}
-        className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500 transition duration-200"
-      >
-        もう一度試す
-      </button>
+    <div className="flex flex-col items-center justify-center min-h-screen pb-60">
+      <Image
+        src="/piyopiyo.gif"
+        alt="歩くひよこのGIF"
+        width={150}
+        height={150}
+        className="mx-auto"
+      />
+      <div className="text-3xl mt-5">読み込み中...</div>
     </div>
   );
 };
