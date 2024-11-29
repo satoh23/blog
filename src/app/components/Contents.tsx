@@ -34,7 +34,7 @@ const Contents = async ({ html }: ContentsProps) => {
               className="line-clamp-2 py-1.5 hover:bg-amber-200 hover:text-amber-950"
             >
               {content.level == "h2" ? (
-                <li>{content.title}</li>
+                <li className="font-extrabold">{content.title}</li>
               ) : (
                 <li className="ml-3">{content.title}</li>
               )}
