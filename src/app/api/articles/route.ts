@@ -16,6 +16,7 @@ async function connect() {
 
 // 記事一覧取得
 export const GET = async (request: Request) => {
+  console.log(request);
   const categoryId = getQueryParamOrUndefined(request.url, "?categoryId=");
   try {
     await connect();
