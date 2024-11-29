@@ -22,26 +22,23 @@ const Contents = async ({ html }: ContentsProps) => {
 
   return (
     <aside className="w-full md:w-1/4 lg:flex flex-col items-center hidden">
-      <div className="mt-10 fixed w-1/4 pl-16">
+      <div className="mt-10 ml-5 sticky top-5">
         <div className="text-amber-950 font-bold mb-2 pb-2 border-b border-dashed border-amber-950 px-1">
           目次
         </div>
         <ul className="mt-2 pl-1.5 text-sm">
           {tableOfContent.map((content: TableOfContent) => (
-            <li
-              className="py-1.5 hover:bg-amber-200 hover:text-amber-950"
+            <a
+              href={content.href}
               key={content.href}
+              className="line-clamp-2 py-1.5 hover:bg-amber-200 hover:text-amber-950"
             >
               {content.level == "h2" ? (
-                <a href={content.href} className="line-clamp-2">
-                  {content.title}
-                </a>
+                <li>{content.title}</li>
               ) : (
-                <a href={content.href} className="ml-3 line-clamp-2">
-                  {content.title}
-                </a>
+                <li className="ml-3">{content.title}</li>
               )}
-            </li>
+            </a>
           ))}
         </ul>
       </div>
