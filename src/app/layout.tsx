@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { zenMaruGothic } from "@/utils/fonts";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "ひよこエンジニアの成長日記",
@@ -20,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <Script src="https://embed.zenn.studio/js/listen-embed-event.js"></Script>
+      </head>
       <body
         className={`container mx-auto bg-amber-100 text-amber-900 ${zenMaruGothic.className}`}
       >

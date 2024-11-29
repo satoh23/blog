@@ -10,9 +10,9 @@ type CategoryProps = {
 const CategoryArea = ({ categories }: CategoryProps) => {
   return (
     <div className="rounded p-4 mt-4 w-full">
-      <h3 className="text-amber-950 font-bold mb-2 pb-2 border-b border-dashed border-amber-950">
+      <div className="text-amber-950 font-bold mb-2 pb-2 border-b border-dashed border-amber-950">
         カテゴリー
-      </h3>
+      </div>
       <ul className="mt-3 pl-2">
         {categories.map((category) => (
           <Link href={`/categories/${category.id}`} key={category.id}>

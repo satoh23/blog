@@ -1,9 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { yuseiMagic } from "@/utils/fonts";
-import Link from "next/link";
+import markdownHtml from "zenn-markdown-html";
+import "zenn-content-css";
+
 import { Article, Category } from "@/types";
 import { fetchDetailArticle } from "@/utils/articles";
+import Contents from "@/app/components/Contents";
 
 const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
   const slug: string = (await props.params).slug;
@@ -12,6 +16,8 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
   const updatedDate: string = new Date(
     detailArticle.updated_at
   ).toLocaleDateString("ja-JP");
+
+  const html = markdownHtml(detailArticle.content);
 
   return (
     <div className="lg:flex">
@@ -48,32 +54,15 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
           className="mx-auto my-6 lg:my-12"
         />
         <div className="text-base leading-relaxed mx-auto pt-5 text-gray-950">
-          <p dangerouslySetInnerHTML={{ __html: detailArticle.content }} />
+          <div
+            className="znc"
+            dangerouslySetInnerHTML={{
+              __html: html,
+            }}
+          />
         </div>
       </div>
-      <aside className="w-full md:w-1/4 lg:flex flex-col items-center hidden">
-        <div className="mt-10 fixed w-1/4 pl-16">
-          <h3 className="text-amber-950 font-bold mb-2 pb-2 border-b border-dashed border-amber-950 px-1">
-            目次
-          </h3>
-          <ul className="mt-2 pl-3 text-sm">
-            <li className="my-0.5 line-clamp-1 hover:bg-amber-200 hover:text-amber-950">
-              <Link href="#">
-                フロントエンドああああああああああああああああああああああああああ
-              </Link>
-            </li>
-            <li className="my-0.5 line-clamp-1 hover:bg-amber-200 hover:text-amber-950">
-              <Link href="#">バックエンド</Link>
-            </li>
-            <li className="my-0.5 line-clamp-1 hover:bg-amber-200 hover:text-amber-950">
-              <Link href="#">ネットワーク</Link>
-            </li>
-            <li className="my-0.5 line-clamp-1 hover:bg-amber-200 hover:text-amber-950">
-              <Link href="#">DB</Link>
-            </li>
-          </ul>
-        </div>
-      </aside>
+      <Contents html={html} />
     </div>
   );
 };

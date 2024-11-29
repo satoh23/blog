@@ -12,3 +12,9 @@ export type Category = {
   name: string;
   icon: string;
 };
+
+export type TableOfContent = {
+  level: string;
+  title: string;
+  href: string;
+};
