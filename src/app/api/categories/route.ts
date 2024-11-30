@@ -28,22 +28,3 @@ export const GET = async () => {
     await prisma.$disconnect();
   }
 };
-
-// 記事投稿
-export const POST = async (req: Request) => {
-  try {
-    const { name, icon } = await req.json();
-    await connect();
-    const article = await prisma.category.create({
-      data: {
-        name,
-        icon,
-      },
-    });
-    return NextResponse.json({ message: "success", article }, { status: 201 });
-  } catch (err) {
-    return NextResponse.json({ message: "Error", err }, { status: 500 });
-  } finally {
-    await prisma.$disconnect();
-  }
-};
