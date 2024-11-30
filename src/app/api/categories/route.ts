@@ -13,7 +13,7 @@ async function connect() {
   }
 }
 
-// 記事一覧取得
+// カテゴリ一覧取得
 export const GET = async () => {
   try {
     await connect();

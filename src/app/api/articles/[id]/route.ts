@@ -13,7 +13,7 @@ async function connect() {
   }
 }
 
-// 記事一覧取得
+// 記事詳細取得
 export const GET = async (
   request: Request,
   { params }: { params: Promise<{ id: string }> }
