@@ -22,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <link rel="icon" href="./favicon.ico" />
         <Script src="https://embed.zenn.studio/js/listen-embed-event.js"></Script>
       </head>
       <body
