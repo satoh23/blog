@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "ひよこエンジニアの成長日記",
   description:
     "フロントエンドエンジニア。新卒でSESに就職し、1年半で転職。コンピューターサイエンスや、Next.js、TypeScript等、勉強したことを記事にします。",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
