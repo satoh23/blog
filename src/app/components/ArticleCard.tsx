@@ -18,13 +18,19 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
         style={{ height: "100%" }}
         key={article.id}
       >
-        <div className="flex-grow">
+        <div>
           <Image
             src={article.thumbnail_url}
             alt={article.title}
             width={360}
             height={360}
+            className="border"
           />
+          <div className="lg:h-12 lg:mb-1 h-20 mt-1 mx-1">
+            <h1 className="text-slate-800 text-base line-clamp-3 lg:line-clamp-2">
+              {article.title}
+            </h1>
+          </div>
           {article.belong_categories.map((category) => (
             <div
               className="inline-block bg-slate-100 rounded-full px-2 py-0.5 text-xs font-semibold text-slate-400 mr-1 mt-1"
@@ -40,13 +46,8 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
               {category.name}
             </div>
           ))}
-          <div>
-            <h1 className="text-slate-800 text-base mt-0.5 mx-1 line-clamp-3 lg:line-clamp-2">
-              {article.title}
-            </h1>
-          </div>
         </div>
-        <p className="text-xs text-gray-400 text-right mt-2">{updatedDate}</p>
+        <p className="text-xs text-gray-400 text-right">{updatedDate}</p>
       </article>
     </Link>
   );

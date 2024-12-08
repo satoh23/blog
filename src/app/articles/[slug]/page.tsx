@@ -43,7 +43,7 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
             {category.name}
           </Link>
         ))}
-        <p className="text-base text-gray-400 text-right mt-4">
+        <p className="text-base text-gray-400 text-right mt-2">
           最終更新：{updatedDate}
         </p>
         <Image
@@ -51,7 +51,7 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
           alt={detailArticle.title}
           width={320}
           height={100}
-          className="mx-auto my-6 lg:my-12"
+          className="mx-auto my-6 lg:my-10 border w-full"
         />
         <div className="text-base leading-relaxed mx-auto pt-5 text-gray-950">
           <div
