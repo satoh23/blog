@@ -11,7 +11,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <Link
       href={`/articles/${article.id}`}
-      className="duration-1000 ease-out shadow-md hover:shadow-lg hover:-translate-y-1 hover:transition-all m-1 lg:m-0"
+      className="duration-1000 ease-out shadow-md hover:shadow-lg hover:-translate-y-1 hover:transition-all m-0.5 lg:m-0"
     >
       <article
         className="p-2 rounded-lg overflow-hidden h-1/4 bg-white flex flex-col"
