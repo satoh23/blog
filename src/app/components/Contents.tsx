@@ -36,7 +36,7 @@ const Contents = async ({ html }: ContentsProps) => {
               {content.level == "h2" ? (
                 <li className="font-extrabold">{content.title}</li>
               ) : (
-                <li className="ml-3">{content.title}</li>
+                <li className="ml-3 text-amber-800">・{content.title}</li>
               )}
             </a>
           ))}
