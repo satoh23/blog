@@ -26,8 +26,8 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             height={360}
             className="border"
           />
-          <div className="lg:h-12 lg:mb-1 h-20 mt-1 mx-1">
-            <h1 className="text-slate-800 text-base line-clamp-3 lg:line-clamp-2">
+          <div className="lg:h-12 lg:mb-1 h-14 mt-1 mx-1">
+            <h1 className="text-slate-800 text-base line-clamp-2">
               {article.title}
             </h1>
           </div>
