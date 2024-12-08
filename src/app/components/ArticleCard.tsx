@@ -11,7 +11,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <Link
       href={`/articles/${article.id}`}
-      className="duration-1000 ease-out shadow-md hover:shadow-lg hover:-translate-y-1 hover:transition-all"
+      className="duration-1000 ease-out shadow-md hover:shadow-lg hover:-translate-y-1 hover:transition-all m-1 lg:m-0"
     >
       <article
         className="p-2 rounded-lg overflow-hidden h-1/4 bg-white flex flex-col"
@@ -24,7 +24,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             alt={article.title}
             width={360}
             height={360}
-            className="border"
+            className="border w-full"
           />
           <div className="lg:h-12 lg:mb-1 h-14 mt-1 mx-1">
             <h1 className="text-slate-800 text-base line-clamp-2">
