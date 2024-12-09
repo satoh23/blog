@@ -11,21 +11,21 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <Link
       href={`/articles/${article.id}`}
-      className="duration-1000 ease-out shadow-md hover:shadow-lg hover:-translate-y-1 hover:transition-all m-0.5 lg:m-0"
+      className="duration-1000 ease-out shadow-md hover:shadow-lg hover:-translate-y-1 hover:transition-all m-1 lg:m-0"
     >
       <article
-        className="p-2 rounded-lg overflow-hidden h-1/4 bg-white flex flex-col"
+        className="p-1 rounded-lg overflow-hidden h-1/4 bg-white flex flex-col"
         style={{ height: "100%" }}
         key={article.id}
       >
-        <div>
-          <Image
-            src={article.thumbnail_url}
-            alt={article.title}
-            width={360}
-            height={360}
-            className="border w-full"
-          />
+        <Image
+          src={article.thumbnail_url}
+          alt={article.title}
+          width={360}
+          height={360}
+          className="w-full"
+        />
+        <div className="px-0.5">
           <div className="lg:h-12 lg:mb-1 h-14 mt-1 mx-1">
             <h1 className="text-slate-800 text-base line-clamp-2">
               {article.title}
@@ -46,8 +46,8 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
               {category.name}
             </div>
           ))}
+          <p className="text-xs text-gray-400 text-right">{updatedDate}</p>
         </div>
-        <p className="text-xs text-gray-400 text-right">{updatedDate}</p>
       </article>
     </Link>
   );
