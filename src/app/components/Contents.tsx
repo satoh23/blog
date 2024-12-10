@@ -12,7 +12,7 @@ const heading = (level: string, title: string) => {
   } else if (level === "h3") {
     return <li className="ml-2 text-amber-800">・{title}</li>;
   } else if (level === "h4") {
-    return <li className="ml-6 text-amber-700">- {title}</li>;
+    return <li className="ml-6 text-amber-800 opacity-70">- {title}</li>;
   }
 };
 
