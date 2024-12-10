@@ -6,11 +6,21 @@ type ContentsProps = {
   html: string;
 };
 
+const heading = (level: string, title: string) => {
+  if (level === "h2") {
+    return <li className="font-extrabold">▪︎ {title}</li>;
+  } else if (level === "h3") {
+    return <li className="ml-2 text-amber-800">・{title}</li>;
+  } else if (level === "h4") {
+    return <li className="ml-6 text-amber-700">- {title}</li>;
+  }
+};
+
 const Contents = async ({ html }: ContentsProps) => {
   const $ = load(html);
 
   const tableOfContent: TableOfContent[] = [];
-  $("h2, h3").each((index, element) => {
+  $("h2, h3, h4").each((index, element) => {
     const level = $(element).prop("tagName")?.toLowerCase();
     const title = $(element).text().trim();
     const href = $(element).find("a").attr("href");
@@ -33,11 +43,7 @@ const Contents = async ({ html }: ContentsProps) => {
               key={content.href}
               className="line-clamp-2 py-1.5 hover:bg-amber-200 hover:text-amber-950"
             >
-              {content.level == "h2" ? (
-                <li className="font-extrabold">・{content.title}</li>
-              ) : (
-                <li className="ml-4 text-amber-800">- {content.title}</li>
-              )}
+              {heading(content.level, content.title)}
             </a>
           ))}
         </ul>
