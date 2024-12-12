@@ -8,7 +8,7 @@ const Header = () => {
       <div>
         <h1 className="text-amber-950 text-2xl font-extrabold">
           <Link href="/" className={`${hachiMaruPop.className}`}>
-            ひよこエンジニアの成長日記
+            ひよこSEの成長日記
           </Link>
         </h1>
       </div>
