@@ -24,13 +24,6 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
   return (
     <>
       <Head>
-        <title>{detailArticle.title}</title>
-        <meta property="og:title" content={detailArticle.title} />
-        <meta
-          property="og:description"
-          content={detailArticle.content.slice(0, 30)}
-        />
-        <meta property="og:image" content={detailArticle.thumbnail_url} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={detailArticle.title} />
         <meta
@@ -38,6 +31,13 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
           content={detailArticle.content.slice(0, 30)}
         />
         <meta name="twitter:image" content={detailArticle.thumbnail_url} />
+        <title>{detailArticle.title}</title>
+        <meta property="og:title" content={detailArticle.title} />
+        <meta
+          property="og:description"
+          content={detailArticle.content.slice(0, 30)}
+        />
+        <meta property="og:image" content={detailArticle.thumbnail_url} />
       </Head>
       <div className="lg:flex">
         <div className="max-w-6xl lg:mx-auto bg-white rounded-xl px-6 py-8 lg:px-14 lg:py-12 lg:w-3/4">
