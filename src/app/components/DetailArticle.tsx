@@ -21,20 +21,14 @@ const DetailArticle = ({ detailArticle, belongCategories, html }: Props) => {
   return (
     <>
       <Head>
-        <title>{detailArticle.title}</title>
-        <meta property="og:title" content={detailArticle.title} />
-        <meta
-          property="og:description"
-          content={detailArticle.content.slice(0, 30)}
-        />
-        <meta property="og:image" content={detailArticle.thumbnail_url} />
+        <title>dfasd</title>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={detailArticle.title} />
+        <meta name="twitter:title" content="eragg" />
+        <meta name="twitter:description" content="dafsdsfs" />
         <meta
-          name="twitter:description"
-          content={detailArticle.content.slice(0, 30)}
+          name="twitter:image"
+          content="https://bcmhhfkokrwvzbacftmx.supabase.co/storage/v1/object/public/article/useState.png"
         />
-        <meta name="twitter:image" content={detailArticle.thumbnail_url} />
       </Head>
       <div className="lg:flex">
         <div className="max-w-6xl lg:mx-auto bg-white rounded-xl px-6 py-8 lg:px-14 lg:py-12 lg:w-3/4">

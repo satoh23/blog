@@ -11,7 +11,7 @@ export async function fetchAllArticles(id?: string) {
 
 export async function fetchDetailArticle(slug: string) {
   const res = await fetch(process.env.ORIGIN + `/api/articles/${slug}`, {
-    cache: "no-store",
+    next: { revalidate: 60 * 60 },
   });
   const data = await res.json();
   return data.article;
