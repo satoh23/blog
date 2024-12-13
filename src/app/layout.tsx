@@ -7,7 +7,6 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import { zenMaruGothic } from "@/utils/fonts";
 import Script from "next/script";
-import TwitterShareButton from "./components/TwitterShareButton";
 
 export const metadata: Metadata = {
   title: "ひよこSEの成長日記",
@@ -17,8 +16,6 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
 };
-
-export const dynamic = "force-dynamic";
 
 export default function RootLayout({
   children,
@@ -36,7 +33,6 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow lg:px-14 py-7">
-            <TwitterShareButton />
             <Suspense fallback={<Loading />}>{children}</Suspense>
           </main>
           <Footer />
