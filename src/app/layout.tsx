@@ -25,6 +25,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <meta
+          name="twitter:image"
+          content="https://bcmhhfkokrwvzbacftmx.supabase.co/storage/v1/object/public/article/useState.png"
+        />
         <Script src="https://embed.zenn.studio/js/listen-embed-event.js"></Script>
       </head>
       <body

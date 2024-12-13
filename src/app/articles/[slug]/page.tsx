@@ -9,23 +9,6 @@ import { Article, Category } from "@/types";
 import { fetchDetailArticle } from "@/utils/articles";
 import Contents from "@/app/components/Contents";
 import TwitterShareButton from "@/app/components/TwitterShareButton";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "ひよこSEの成長日記",
-  description:
-    "フロントエンドエンジニア。新卒でSESに就職し、1年半で転職。コンピューターサイエンスや、Next.js、TypeScript等、勉強したことを記事にします。",
-  icons: {
-    icon: "/favicon.ico",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "detailArticle.title,",
-    description: "fdsfsfsafas",
-    images:
-      "https://bcmhhfkokrwvzbacftmx.supabase.co/storage/v1/object/public/article/useState.png",
-  },
-};
 
 const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
   const slug: string = (await props.params).slug;
