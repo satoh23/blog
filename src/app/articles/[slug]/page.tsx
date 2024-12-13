@@ -9,6 +9,7 @@ import { Article, Category } from "@/types";
 import { fetchDetailArticle } from "@/utils/articles";
 import Contents from "@/app/components/Contents";
 import TwitterShareButton from "@/app/components/TwitterShareButton";
+import Head from "next/head";
 
 const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
   const slug: string = (await props.params).slug;
@@ -22,6 +23,22 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
 
   return (
     <>
+      <Head>
+        <title>{detailArticle.title}</title>
+        <meta property="og:title" content={detailArticle.title} />
+        <meta
+          property="og:description"
+          content={detailArticle.content.slice(0, 30)}
+        />
+        <meta property="og:image" content={detailArticle.thumbnail_url} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={detailArticle.title} />
+        <meta
+          name="twitter:description"
+          content={detailArticle.content.slice(0, 30)}
+        />
+        <meta name="twitter:image" content={detailArticle.thumbnail_url} />
+      </Head>
       <div className="lg:flex">
         <div className="max-w-6xl lg:mx-auto bg-white rounded-xl px-6 py-8 lg:px-14 lg:py-12 lg:w-3/4">
           <h1
