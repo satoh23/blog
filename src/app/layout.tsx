@@ -16,13 +16,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "test",
-    description: "testdesu",
-    images:
-      "https://bcmhhfkokrwvzbacftmx.supabase.co/storage/v1/object/public/article/useState.png",
-  },
 };
 
 export const dynamic = "force-dynamic";
