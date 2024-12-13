@@ -10,6 +10,39 @@ import { fetchDetailArticle } from "@/utils/articles";
 import Contents from "@/app/components/Contents";
 import TwitterShareButton from "@/app/components/TwitterShareButton";
 
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug: string = (await props.params).slug;
+  const pageUrl = `articles/${slug}/`;
+  const detailArticle: Article = await fetchDetailArticle(slug);
+
+  const metadata = {
+    title: detailArticle.title,
+    description: detailArticle.content.slice(0, 30),
+    alternates: {
+      canonical: `${pageUrl}`,
+    },
+    openGraph: {
+      title: detailArticle.title,
+      description: detailArticle.content.slice(0, 30),
+      url: `${process.env.ORIGIN}${pageUrl}`,
+      siteName: detailArticle.title,
+      locale: "ja_JP",
+      type: "website",
+      images: detailArticle.thumbnail_url,
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: detailArticle.thumbnail_url,
+      title: detailArticle.title,
+      description: detailArticle.content.slice(0, 30),
+    },
+  };
+
+  return metadata;
+}
+
 const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
   const slug: string = (await props.params).slug;
   const detailArticle: Article = await fetchDetailArticle(slug);
