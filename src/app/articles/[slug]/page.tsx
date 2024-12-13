@@ -20,9 +20,6 @@ export async function generateMetadata(props: {
   const metadata = {
     title: detailArticle.title,
     description: detailArticle.content.slice(0, 30),
-    alternates: {
-      canonical: `${pageUrl}`,
-    },
     openGraph: {
       title: detailArticle.title,
       description: detailArticle.content.slice(0, 30),
