@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import { zenMaruGothic } from "@/utils/fonts";
 import Script from "next/script";
+import TwitterShareButton from "./components/TwitterShareButton";
 
 export const metadata: Metadata = {
   title: "ひよこSEの成長日記",
@@ -14,6 +15,13 @@ export const metadata: Metadata = {
     "フロントエンドエンジニア。新卒でSESに就職し、1年半で転職。コンピューターサイエンスや、Next.js、TypeScript等、勉強したことを記事にします。",
   icons: {
     icon: "/favicon.ico",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ひとこ",
+    description: "あああああ",
+    images:
+      "https://bcmhhfkokrwvzbacftmx.supabase.co/storage/v1/object/public/article/useState.png",
   },
 };
 
@@ -35,6 +43,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow lg:px-14 py-7">
+            <TwitterShareButton />
             <Suspense fallback={<Loading />}>{children}</Suspense>
           </main>
           <Footer />
