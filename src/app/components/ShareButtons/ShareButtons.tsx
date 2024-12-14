@@ -7,7 +7,7 @@ export type Props = {
 
 const ShareButtons = ({ title, url }: Props) => {
   return (
-    <div className="mt-40">
+    <div className="mt-10">
       <p className="opacity-50 text-xl w-full rounded bg-amber-700 text-white p-2">
         共有する
       </p>
