@@ -14,7 +14,7 @@ export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
 }) {
   const slug: string = (await props.params).slug;
-  const pageUrl = `articles/${slug}/`;
+  const url = `${process.env.ORIGIN}articles/${slug}/`;
   const detailArticle: Article = await fetchDetailArticle(slug);
 
   const metadata = {
@@ -23,7 +23,7 @@ export async function generateMetadata(props: {
     openGraph: {
       title: `${detailArticle.title} | ひよこSEの成長日記`,
       description: detailArticle.content.slice(0, 30),
-      url: `${process.env.ORIGIN}${pageUrl}`,
+      url: url,
       siteName: detailArticle.title,
       locale: "ja_JP",
       type: "website",
@@ -47,6 +47,8 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
   const updatedDate: string = new Date(
     detailArticle.updated_at
   ).toLocaleDateString("ja-JP");
+
+  const url = `${process.env.ORIGIN}articles/${slug}/`;
 
   const html = markdownHtml(detailArticle.content);
 
@@ -92,7 +94,7 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
             }}
           />
         </div>
-        <ShareButtons />
+        <ShareButtons title={detailArticle.title} url={url} />
       </div>
       <Contents html={html} />
     </div>

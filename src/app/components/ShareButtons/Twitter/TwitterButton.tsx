@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { FaXTwitter } from "react-icons/fa6";
 
-function TwitterShareButton() {
+import { Props as ShareProps } from "../ShareButtons";
+
+function TwitterShareButton({ title, url }: ShareProps) {
   useEffect(() => {
     // Twitterのスクリプトを動的にロード
     const script = document.createElement("script");
@@ -21,8 +23,9 @@ function TwitterShareButton() {
 
   return (
     <Link
-      href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+      href={`https://twitter.com/intent/tweet?text=${title}&url=${url}`}
       data-show-count="false"
+      target="_blank"
       className="inline-block text-2xl bg-black text-white p-2 rounded-lg hover:bg-white hover:text-black hover:border hover:border-black duration-500"
     >
       <FaXTwitter />
