@@ -26,7 +26,7 @@ function TwitterShareButton({ title, url }: ShareProps) {
       href={`https://twitter.com/intent/tweet?text=${title}&url=${url}`}
       data-show-count="false"
       target="_blank"
-      className="inline-block text-2xl bg-black text-white p-2 rounded-lg hover:bg-white hover:text-black hover:border hover:border-black duration-500"
+      className="inline-block text-2xl bg-black text-white p-2 rounded-lg hover:bg-white hover:text-black border border-black duration-300"
     >
       <FaXTwitter />
     </Link>
