@@ -1,6 +1,8 @@
 "use client";
+
 import Link from "next/link";
 import { useEffect } from "react";
+import { FaXTwitter } from "react-icons/fa6";
 
 function TwitterShareButton() {
   useEffect(() => {
@@ -20,10 +22,10 @@ function TwitterShareButton() {
   return (
     <Link
       href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-      className="twitter-share-button"
       data-show-count="false"
+      className="inline-block text-2xl bg-black text-white p-2 rounded-lg hover:bg-white hover:text-black hover:border hover:border-black duration-500"
     >
-      Tweet
+      <FaXTwitter />
     </Link>
   );
 }

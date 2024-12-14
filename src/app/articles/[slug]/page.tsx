@@ -8,7 +8,7 @@ import "zenn-content-css";
 import { Article, Category } from "@/types";
 import { fetchDetailArticle } from "@/utils/articles";
 import Contents from "@/app/components/Contents";
-import TwitterShareButton from "@/app/components/TwitterShareButton";
+import ShareButtons from "@/app/components/ShareButtons/ShareButtons";
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
@@ -77,7 +77,6 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
         <p className="text-base text-gray-400 text-right mt-2">
           最終更新：{updatedDate}
         </p>
-        <TwitterShareButton />
         <Image
           src={detailArticle.thumbnail_url}
           alt={detailArticle.title}
@@ -93,6 +92,7 @@ const DetailArticle = async (props: { params: Promise<{ slug: string }> }) => {
             }}
           />
         </div>
+        <ShareButtons />
       </div>
       <Contents html={html} />
     </div>
