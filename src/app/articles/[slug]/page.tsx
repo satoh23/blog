@@ -18,10 +18,10 @@ export async function generateMetadata(props: {
   const detailArticle: Article = await fetchDetailArticle(slug);
 
   const metadata = {
-    title: detailArticle.title,
+    title: `${detailArticle.title} | ひよこSEの成長日記`,
     description: detailArticle.content.slice(0, 30),
     openGraph: {
-      title: detailArticle.title,
+      title: `${detailArticle.title} | ひよこSEの成長日記`,
       description: detailArticle.content.slice(0, 30),
       url: `${process.env.ORIGIN}${pageUrl}`,
       siteName: detailArticle.title,
@@ -32,7 +32,7 @@ export async function generateMetadata(props: {
     twitter: {
       card: "summary_large_image",
       images: detailArticle.thumbnail_url,
-      title: detailArticle.title,
+      title: `${detailArticle.title} | ひよこSEの成長日記`,
       description: detailArticle.content.slice(0, 30),
     },
   };
