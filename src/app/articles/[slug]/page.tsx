@@ -7,7 +7,7 @@ import "zenn-content-css";
 
 import { Article, Category } from "@/types";
 import { fetchDetailArticle } from "@/utils/articles";
-import Contents from "@/app/components/Contents";
+import Contents from "@/app/components/Contents/Contents";
 import ShareButtons from "@/app/components/ShareButtons/ShareButtons";
 
 export async function generateMetadata(props: {

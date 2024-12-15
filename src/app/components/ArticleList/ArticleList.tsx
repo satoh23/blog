@@ -1,6 +1,6 @@
 import { Article } from "@/types";
 
-import ArticleCard from "./ArticleCard";
+import ArticleCard from "./ArticleCard/ArticleCard";
 
 type ArticleListProps = {
   articles: Article[];

@@ -1,5 +1,5 @@
-import Profile from "./Profile";
-import CategoryList from "./CategoryList";
+import Profile from "./Profile/Profile";
+import CategoryList from "./CategoryList/CategoryList";
 
 import { Category } from "@/types";
 

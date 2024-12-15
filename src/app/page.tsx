@@ -1,6 +1,6 @@
 import { Article, Category } from "@/types";
-import ArticleList from "./components/ArticleList";
-import SideBar from "./components/SideBar";
+import ArticleList from "./components/ArticleList/ArticleList";
+import SideBar from "./components/SideBar/SideBar";
 import { fetchAllArticles } from "@/utils/articles";
 import { fetchAllCategories } from "@/utils/categories";
 
